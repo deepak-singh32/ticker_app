@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:text="Enter Bus Number"
+                android:layout_margin="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/bus_button_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/card_backgroud"
+                    android:text="DL1PC"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    app:layout_constraintEnd_toStartOf="@+id/bus_button_2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/bus_button_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="DL1PB"
+                    android:textColor="@color/black"
+                    android:background="@drawable/card_backgroud"
+                    android:textSize="16sp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/bus_button_1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:id="@+id/first"
+                    android:layout_width="45dp"
+                    android:layout_height="65dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/input_card_backgroud"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="1" />
+
+                <EditText
+
+                    android:id="@+id/second"
+                    android:layout_width="45dp"
+                    android:layout_height="65dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/input_card_backgroud"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="1" />
+
+                <EditText
+
+                    android:id="@+id/third"
+                    android:layout_width="45dp"
+                    android:layout_height="65dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/input_card_backgroud"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="1" />
+
+                <EditText
+
+                    android:id="@+id/fourth"
+                    android:layout_width="45dp"
+                    android:layout_height="65dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/input_card_backgroud"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:imeOptions="actionDone"
+                    android:maxLength="1" />
+
+
+            </LinearLayout>
+            <View
+                android:id="@+id/extraSpace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
