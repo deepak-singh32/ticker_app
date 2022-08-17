@@ -16,8 +16,18 @@ public class LoginActivity extends AppCompatActivity {
         if(getSupportActionBar() != null) getSupportActionBar().hide();
     }
 
-    public void onclickNext(View view) {
+//    public void onclickNext(View view) {
+//
+//        startActivity(new Intent(view.getContext(),MainActivity.class));
+//    }
 
-        startActivity(new Intent(view.getContext(),MainActivity.class));
+    public void onClickName(View view) {
+    }
+
+    public void onClickPhone(View view) {
+    }
+
+    public void onclickOtp(View view) {
+        startActivity(new Intent(view.getContext(),OtpActivity.class));
     }
 }

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+
+                android:text="Bus"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:id="@+id/firstlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:background="@drawable/circel_backgroud"
+                    android:padding="12dp"
+                    app:tint="@color/ColorLightTeal"
+                    android:src="@drawable/ic_ticket"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/black"
+                    android:text="Buy ticket"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:background="@drawable/circel_backgroud"
+                    android:padding="12dp"
+                    app:tint="@color/ColorLightTeal"
+                    android:src="@drawable/ic_history"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <TextView
+                    android:layout_marginTop="4dp"
+
+                    android:textColor="@color/black"
+                    android:text="All tickets"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:background="@drawable/circel_backgroud"
+                        android:padding="12dp"
+                        app:tint="@color/ColorLightTeal"
+                        android:src="@drawable/ic_pass"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+
+                        android:textColor="@color/black"
+                        android:text="Buy daily pass"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/extraSpace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

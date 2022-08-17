@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OtpActivity">
+
+    <TextView
+        android:layout_gravity="center"
+        android:text="Verify your\nPhone number"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+
+        android:gravity="center"
+        android:text="Enter your otp code sent on 9667676054"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:id="@+id/first"
+            android:layout_width="50dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/input_card_backgroud"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="1" />
+
+        <EditText
+
+            android:id="@+id/second"
+            android:layout_width="50dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/input_card_backgroud"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="1" />
+
+        <EditText
+
+            android:id="@+id/third"
+            android:layout_width="50dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/input_card_backgroud"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="1" />
+
+        <EditText
+
+            android:id="@+id/fourth"
+            android:layout_width="50dp"
+            android:layout_height="65dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/input_card_backgroud"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:imeOptions="actionDone"
+            android:maxLength="1" />
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+
+        android:gravity= "center"
+        android:text="OTP not received?"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+
+        android:gravity= "center"
+        android:textStyle="bold"
+        android:textColor="@color/ColorLightTeal"
+        android:text="resend new code"
+        android:textSize="18sp"
+        android:textAllCaps="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

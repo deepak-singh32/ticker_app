@@ -1,4 +1,4 @@
-package com.example.ticker;
+package com.example.ticker.classes;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -23,6 +23,8 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
+import com.example.ticker.BusActivity;
+import com.example.ticker.R;
 import com.example.ticker.databinding.LayoutBottomSheetBinding;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -90,7 +92,7 @@ public class BottomSheet extends BottomSheetDialogFragment {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     if((bi.first.getText().toString()+bi.second.getText().toString()+bi.third.getText().toString()+bi.fourth.getText().toString()).length() == 4){
-                        startActivity(new Intent(requireActivity(),BusActivity.class));
+                        startActivity(new Intent(requireActivity(), BusActivity.class));
                     }
                     return true;
                 }
@@ -119,7 +121,7 @@ public class BottomSheet extends BottomSheetDialogFragment {
         nextFocus(bi.second,bi.third);
         nextFocus(bi.third,bi.fourth);
 
-        checkDLValid();
+//        checkDLValid();
 
         setBottomSheetBehavior(bottomSheetBehavior);
 
@@ -127,13 +129,6 @@ public class BottomSheet extends BottomSheetDialogFragment {
         return bottomSheet;
     }
 
-
-
-    private void checkDLValid(){
-
-
-
-    }
 
 
 
@@ -174,8 +169,6 @@ public class BottomSheet extends BottomSheetDialogFragment {
 
         super.onCancel(dialog);
         requireActivity().finish();
-
-        // Add you codition
     }
 
     @Override
