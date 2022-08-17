@@ -42,6 +42,7 @@
             <TextView
                 android:layout_weight="1"
                 android:gravity="end"
+                android:id="@+id/bus"
                 android:textColor="@color/white"
                 android:text="DL1PC5806"
                 android:layout_width="match_parent"

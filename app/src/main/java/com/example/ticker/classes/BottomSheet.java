@@ -26,16 +26,25 @@ import androidx.databinding.DataBindingUtil;
 import com.example.ticker.BusActivity;
 import com.example.ticker.R;
 import com.example.ticker.databinding.LayoutBottomSheetBinding;
+import com.example.ticker.models.Bus;
+import com.example.ticker.retrofit.RetrofitClient;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.gson.Gson;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BottomSheet extends BottomSheetDialogFragment {
 
 
     BottomSheetBehavior bottomSheetBehavior;
     LayoutBottomSheetBinding bi;
+    String busPrefix = "";
 
+    final String TAG = BottomSheet.class.getSimpleName();
 
 
     @Override
@@ -92,7 +101,8 @@ public class BottomSheet extends BottomSheetDialogFragment {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     if((bi.first.getText().toString()+bi.second.getText().toString()+bi.third.getText().toString()+bi.fourth.getText().toString()).length() == 4){
-                        startActivity(new Intent(requireActivity(), BusActivity.class));
+                       if(busPrefix != null && busPrefix != "" ) checkBusNumber();
+                       else Toast.makeText(requireActivity(), "Select the Bus number", Toast.LENGTH_LONG).show();
                     }
                     return true;
                 }
@@ -103,6 +113,7 @@ public class BottomSheet extends BottomSheetDialogFragment {
         bi.busButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                busPrefix = bi.busButton1.getText().toString();
                 bi.busButton2.setBackgroundTintList(ContextCompat.getColorStateList(requireActivity(), R.color.colorLightGrey));
                 view.setBackgroundTintList(ContextCompat.getColorStateList(requireActivity(), R.color.colorBlue));
             }
@@ -111,7 +122,7 @@ public class BottomSheet extends BottomSheetDialogFragment {
         bi.busButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                busPrefix = bi.busButton2.getText().toString();
                 bi.busButton1.setBackgroundTintList(ContextCompat.getColorStateList(requireActivity(), R.color.colorLightGrey));
                 view.setBackgroundTintList(ContextCompat.getColorStateList(requireActivity(), R.color.colorBlue));
             }
@@ -130,7 +141,9 @@ public class BottomSheet extends BottomSheetDialogFragment {
     }
 
 
-
+    private String getBusNumber(){
+        return busPrefix+bi.first.getText().toString()+bi.second.getText().toString()+bi.third.getText().toString()+bi.fourth.getText().toString();
+    }
 
     private void setBottomSheetBehavior(BottomSheetBehavior behavior){
         bi.first.setOnFocusChangeListener((v,b)->{behavior.setState(BottomSheetBehavior.STATE_EXPANDED);});
@@ -163,6 +176,36 @@ public class BottomSheet extends BottomSheetDialogFragment {
         });
     }
 
+
+    private void checkBusNumber(){
+        String busNum = getBusNumber();
+        Log.e(TAG, "checkBusNumber: "+busNum);
+        Call<Bus> call = RetrofitClient.getInstance().getMyApi().getBusDetails(busNum);
+
+        call.enqueue(new Callback<Bus>() {
+            @Override
+            public void onResponse(Call<Bus> call, Response<Bus> response) {
+                Bus data = response.body();
+                Log.d("BusActivity", "onResponse: " + response.code());
+                if(response.isSuccessful() && response.code() == 200) {
+                    String strData = new Gson().toJson(data);
+                    Intent intent = new Intent(requireActivity(), BusActivity.class);
+                    intent.putExtra("bus_object",strData);
+                    startActivity(intent);
+                }else if(response.code() == 404){
+                    Toast.makeText(requireActivity(), "Invalid Bus Number", Toast.LENGTH_SHORT).show();
+                }
+//                busRoute.setText(data.getRoute_name() + " - " + data.getEnding_station_name());
+
+            }
+
+            @Override
+            public void onFailure(Call<Bus> call, Throwable t) {
+                Log.e("BusActivity", "onFailure: "+t.getMessage());
+                Toast.makeText(requireActivity(), t.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
 
     @Override
     public void onCancel(DialogInterface dialog) {

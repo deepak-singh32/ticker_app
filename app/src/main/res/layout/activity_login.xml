@@ -34,6 +34,7 @@
 
     <EditText
         android:hint="Name"
+        android:visibility="gone"
         android:layout_marginTop="20dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
@@ -50,6 +51,8 @@
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:inputType="number"
+        android:maxLength="10"
+        android:id="@+id/phone"
         android:background="@drawable/edit_background"
         android:padding="10dp"
         android:onClick="onClickPhone"

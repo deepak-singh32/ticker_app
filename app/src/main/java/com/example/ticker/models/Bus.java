@@ -1,8 +1,9 @@
 package com.example.ticker.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Bus {
+public class Bus implements Serializable {
     Integer bus_id;
     String bus_number;
 

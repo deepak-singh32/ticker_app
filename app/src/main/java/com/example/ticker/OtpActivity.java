@@ -6,10 +6,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.ticker.classes.Preferences;
+import com.example.ticker.models.Bus;
+import com.example.ticker.models.Otp;
+import com.example.ticker.models.User;
+import com.example.ticker.retrofit.RetrofitClient;
+import com.google.gson.JsonObject;
+
+import java.util.HashMap;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class OtpActivity extends AppCompatActivity {
 
@@ -35,15 +50,52 @@ public class OtpActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     if((first.getText().toString()+second.getText().toString()+third.getText().toString()+fourth.getText().toString()).length() == 4){
-                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                      verifyOtp();
                     }
                     return true;
                 }
                 return false;
             }
         });
+
+
+
+
     }
 
+    private Integer getOtp(){
+        return Integer.parseInt((first.getText().toString()+second.getText().toString()+third.getText().toString()+fourth.getText().toString()));
+    }
+
+   private void verifyOtp(){
+       Integer userId = Preferences.getInteger(OtpActivity.this,"user_id");
+       Integer inputOtp = getOtp();
+       Log.e("OtpActivity", "verifyOtp: "+userId.toString()+" "+inputOtp.toString());
+       HashMap<String,Integer> SendData =new HashMap<>();
+       SendData.put("user_id",userId);
+       SendData.put("otp",inputOtp);
+
+       Call<Otp> call = RetrofitClient.getInstance().getMyApi().verfityOtp(SendData);
+
+       call.enqueue(new Callback<Otp>() {
+           @Override
+           public void onResponse(Call<Otp> call, Response<Otp> response) {
+               Log.e("OtpActivity", "onResponse: "+response.code());
+
+               if(response.isSuccessful() && response.code() == 200){
+                   Otp data = response.body();
+
+                   Preferences.saveString(OtpActivity.this,"token",data.getToken());
+                   startActivity(new Intent(OtpActivity.this,HomeActivity.class));
+               }
+           }
+
+           @Override
+           public void onFailure(Call<Otp> call, Throwable t) {
+               Toast.makeText(OtpActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
+           }
+       });
+   }
 
     private void nextFocus(EditText first , EditText second){
         first.addTextChangedListener(new TextWatcher() {

@@ -21,7 +21,7 @@ import java.util.List;
 public class RouteAdapter extends ArrayAdapter {
 
 
-    private ArrayList<Route> dataList;
+    private List<Route> dataList;
 
     private Context mContext;
 
@@ -33,7 +33,7 @@ public class RouteAdapter extends ArrayAdapter {
 
 
 
-    public RouteAdapter(@NonNull Context context, int resource, ArrayList<Route> storeDataLst) {
+    public RouteAdapter(@NonNull Context context, int resource, List<Route> storeDataLst) {
         super(context, resource,storeDataLst);
         this.dataList = storeDataLst;
         this.mContext= context;
