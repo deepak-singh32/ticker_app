@@ -215,16 +215,13 @@ public class BookActivity extends AppCompatActivity {
                         Ticket data = response.body();
                         Log.e(TAG, "onResponse: "+data.getMsg());
 
-//                        Intent intent = new Intent(BookActivity.this,TicketActivity.class);
-//                        intent.putExtra("bus",busNUmber);
-//                        intent.putExtra("bus_route",route.getName());
-//                        intent.putExtra("fare",amount);
-//                        boolean price = five || fiveteen || ten;
-//                        intent.putExtra("price",price);
-//                        intent.putExtra("ticket_num",)
-//
-//
-//                        startActivity();
+
+
+                        Intent intent = new Intent(BookActivity.this,HomeActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+
                     }
 
                     progressDialog.dismiss();
@@ -238,11 +235,12 @@ public class BookActivity extends AppCompatActivity {
             });
 
 
-
-
-
         }else{
             Toast.makeText(this, "Please select the fare of ticket", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void onClickBack(View view) {
+        finish();
     }
 }

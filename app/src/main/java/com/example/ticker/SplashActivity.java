@@ -31,8 +31,10 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(token != null && token != ""){
+
                     startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                 }else{
+
                     startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                 }
                 finish();

@@ -1,6 +1,7 @@
 package com.example.ticker.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,10 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticker.R;
+import com.example.ticker.TicketActivity;
 import com.example.ticker.models.BusTicket;
 import com.example.ticker.models.Ticket;
+import com.google.gson.Gson;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -52,6 +55,11 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
        holder.starting.setText(model.getStarting_station());
        holder.ending.setText(model.getEnding_station());
        holder.cardView.setOnClickListener((v)->{
+
+           String strData = new Gson().toJson(model);
+           Intent intent = new Intent(v.getContext(), TicketActivity.class);
+           intent.putExtra("ticket",strData);
+           v.getContext().startActivity(intent);
 
        });
     }

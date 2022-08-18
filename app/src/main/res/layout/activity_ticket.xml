@@ -46,6 +46,7 @@
                     android:layout_gravity="start"
                     android:textColor="@color/black"
                     android:text="DL1PC5306"
+                    android:id="@+id/dl_number"
                     android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -53,8 +54,10 @@
                 <TextView
                     android:layout_weight="1"
                     android:gravity="end"
+                    android:id="@+id/amount"
                     android:textColor="@color/black"
                     android:text="\u20B9 18.0"
+                    android:visibility="gone"
                     android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -113,6 +116,7 @@
                     android:gravity="end"
                     android:textStyle="bold"
                     android:textColor="@color/black"
+                    android:id="@+id/fare"
                     android:text="\u20B9 10.0"
                     android:textSize="16sp"
                     android:layout_width="wrap_content"
@@ -157,6 +161,7 @@
                     android:layout_gravity="start"
                     android:textColor="@color/black"
                     android:text="01-07-2022 16:13:36"
+                    android:id="@+id/timestamp"
                     android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -164,6 +169,7 @@
                 <TextView
                     android:layout_weight="1"
                     android:gravity="end"
+                    android:id="@+id/ticket_num"
                     android:textColor="@color/black"
                     android:text="2"
                     android:textSize="16sp"
@@ -186,6 +192,7 @@
                 android:layout_gravity="start"
                 android:textColor="@color/black"
                 android:text="snpd"
+                android:id="@+id/starting"
                 android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -204,6 +211,7 @@
                 android:textColor="@color/black"
                 android:text="badarpur border (t)"
                 android:textSize="16sp"
+                android:id="@+id/ending"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -212,6 +220,7 @@
                 android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:text="T01072022de9b7ca846"
+                android:visibility="invisible"
                 android:textSize="12sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -234,6 +243,7 @@
     </androidx.cardview.widget.CardView>
 
     <ImageView
+        android:onClick="onClickCancel"
         android:id="@+id/imageView"
         android:layout_width="25dp"
         android:layout_height="25dp"

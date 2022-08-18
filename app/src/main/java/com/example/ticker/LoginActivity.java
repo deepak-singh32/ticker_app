@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(LoginActivity.this,OtpActivity.class);
                         intent.putExtra("user_id",data.getUser_id());
+                        intent.putExtra("phone",phone.getText().toString());
                         startActivity(intent);
                     }
                 }

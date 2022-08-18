@@ -29,6 +29,7 @@ import retrofit2.Response;
 public class OtpActivity extends AppCompatActivity {
 
     EditText first,second,third,fourth;
+    TextView otp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,11 @@ public class OtpActivity extends AppCompatActivity {
         second = findViewById(R.id.second);
         third = findViewById(R.id.third);
         fourth = findViewById(R.id.fourth);
+        otp = findViewById(R.id.otptext);
+
+        String otpstring = getIntent().getStringExtra("otp");
+
+        otp.setText("Enter your otp code sent on "+otpstring);
 
         nextFocus(first, second);
         nextFocus(second,third);
@@ -86,7 +92,10 @@ public class OtpActivity extends AppCompatActivity {
                    Otp data = response.body();
 
                    Preferences.saveString(OtpActivity.this,"token",data.getToken());
-                   startActivity(new Intent(OtpActivity.this,HomeActivity.class));
+                   Intent intent = new Intent(OtpActivity.this,HomeActivity.class);
+                   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                   intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                   startActivity(intent);
                }
            }
 
