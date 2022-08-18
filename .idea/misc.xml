@@ -16,16 +16,21 @@
         <entry key="..\:/Android Projects/app/src/main/res/drawable/home_bottom_shett.xml" value="0.181" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/ic__998f2c4_dc35_4cc2_a95a_34f6911bda8b.xml" value="0.1795" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/ic__d530230_54ac_4d98_9f1d_a66072986d69.xml" value="0.2" />
+        <entry key="..\:/Android Projects/app/src/main/res/drawable/ic_add.xml" value="0.112" />
+        <entry key="..\:/Android Projects/app/src/main/res/drawable/ic_baseline_horizontal_rule_24.xml" value="0.112" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/ic_bus.xml" value="0.2" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/ic_history.xml" value="0.181" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1795" />
+        <entry key="..\:/Android Projects/app/src/main/res/drawable/ic_logo.xml" value="0.181" />
+        <entry key="..\:/Android Projects/app/src/main/res/drawable/ic_minus.xml" value="0.112" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/ic_pass.xml" value="0.181" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/ic_ticket.xml" value="0.181" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/input_card_backgroud.xml" value="0.1985" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/roundede_dialog.xml" value="0.1" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/route_item.xml" value="0.1205" />
         <entry key="..\:/Android Projects/app/src/main/res/drawable/ticket_background.xml" value="0.118" />
-        <entry key="..\:/Android Projects/app/src/main/res/layout/activity_book.xml" value="0.18" />
+        <entry key="..\:/Android Projects/app/src/main/res/layout/activity_all_ticket.xml" value="0.16168478260869565" />
+        <entry key="..\:/Android Projects/app/src/main/res/layout/activity_book.xml" value="0.307426597582038" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/activity_bus.xml" value="0.33" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/activity_home.xml" value="0.358695652173913" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/activity_login.xml" value="0.25" />
@@ -33,12 +38,14 @@
         <entry key="..\:/Android Projects/app/src/main/res/layout/activity_otp.xml" value="0.33" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/activity_select.xml" value="0.11499493414387031" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/activity_splash_acitivy.xml" value="0.2015625" />
+        <entry key="..\:/Android Projects/app/src/main/res/layout/activity_splash_activity.xml" value="0.25" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/activity_ticket.xml" value="0.22" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.24814814814814815" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/home_bottom_sheet.xml" value="0.358695652173913" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.18" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/route_item_layout.xml" value="0.3815261044176707" />
         <entry key="..\:/Android Projects/app/src/main/res/layout/stop_item_layout.xml" value="0.22" />
+        <entry key="..\:/Android Projects/app/src/main/res/layout/ticket_item_layout.xml" value="0.3473895582329317" />
       </map>
     </option>
   </component>

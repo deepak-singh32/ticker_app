@@ -4,6 +4,8 @@ package com.example.ticker.retrofit;
 import com.example.ticker.models.Bus;
 import com.example.ticker.models.Otp;
 import com.example.ticker.models.Routes;
+import com.example.ticker.models.Ticket;
+import com.example.ticker.models.Tickets;
 import com.example.ticker.models.User;
 
 import java.util.HashMap;
@@ -34,4 +36,10 @@ public interface Api {
 
     @GET("route/get_all_routes")
     Call<Routes> getAllRoutes();
+
+    @POST("ticket/book_ticket")
+    Call<Ticket> bookTicket(@Body HashMap payload);
+
+    @GET("ticket/get_tickets")
+    Call<Tickets> getTickets(@Query("user_id") Integer Userid);
 }

@@ -2,6 +2,7 @@ package com.example.ticker.classes;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -180,6 +181,10 @@ public class BottomSheet extends BottomSheetDialogFragment {
     private void checkBusNumber(){
         String busNum = getBusNumber();
         Log.e(TAG, "checkBusNumber: "+busNum);
+        ProgressDialog progressDialog = new ProgressDialog(requireActivity());
+        progressDialog.setTitle("");
+        progressDialog.setMessage("Please wait!");
+        progressDialog.show();
         Call<Bus> call = RetrofitClient.getInstance().getMyApi().getBusDetails(busNum);
 
         call.enqueue(new Callback<Bus>() {
@@ -194,13 +199,18 @@ public class BottomSheet extends BottomSheetDialogFragment {
                     startActivity(intent);
                 }else if(response.code() == 404){
                     Toast.makeText(requireActivity(), "Invalid Bus Number", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(requireActivity(), "Some error has occured, Please try again later", Toast.LENGTH_SHORT).show();
                 }
+
+                progressDialog.dismiss();
 //                busRoute.setText(data.getRoute_name() + " - " + data.getEnding_station_name());
 
             }
 
             @Override
             public void onFailure(Call<Bus> call, Throwable t) {
+                progressDialog.dismiss();
                 Log.e("BusActivity", "onFailure: "+t.getMessage());
                 Toast.makeText(requireActivity(), t.toString(), Toast.LENGTH_LONG).show();
             }

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
+import com.example.ticker.AllTicketActivity;
 import com.example.ticker.BusActivity;
 import com.example.ticker.MainActivity;
 import com.example.ticker.R;
@@ -83,7 +84,7 @@ public class HomeSheet extends BottomSheetDialogFragment {
         bottomSheetBehavior.setHideable(false);
 
         bi.firstlayout.setOnClickListener((v)->{ startActivity(new Intent(requireActivity(), MainActivity.class));});
-
+        bi.secondLayout.setOnClickListener((v)->{startActivity(new Intent(requireActivity(), AllTicketActivity.class));});
 
         return bottomSheet;
     }
